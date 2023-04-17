@@ -14,8 +14,19 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function createDreamTeam(/* members */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+    // Check if members is an array
+    if (!Array.isArray(members)) {
+      return false;
+    }
+  
+    // Filter out non-string values and convert the remaining values to uppercase
+    const filteredMembers = members.filter(member => typeof member === 'string')
+                                    .map(member => member.trim().toUpperCase());
+  
+    // Sort the filtered members alphabetically and return the concatenated first letters
+    return filteredMembers.map(member => member[0])
+                          .sort()
+                          .join('');
 }
 
 module.exports = {
