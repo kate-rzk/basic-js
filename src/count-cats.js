@@ -14,7 +14,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  * ]) => 3`
  *
  */
-function countCats(matrix) {
+function countCats(backyard) {
   // Flatten the 2D array into a 1D array
   const flatBackyard = backyard.flat();
   
