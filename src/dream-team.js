@@ -13,20 +13,17 @@ const { NotImplementedError } = require('../extensions/index.js');
  * createDreamTeam(['Olivia', 1111, 'Lily', 'Oscar', true, null]) => 'LOO'
  *
  */
-function createDreamTeam(/* members */) {
+function createDreamTeam(members) {
     // Check if members is an array
     if (!Array.isArray(members)) {
       return false;
     }
   
     // Filter out non-string values and convert the remaining values to uppercase
-    const filteredMembers = members.filter(member => typeof member === 'string')
-                                    .map(member => member.trim().toUpperCase());
+    const filteredMembers = members.filter(member => typeof member === 'string').map(member => member.trim().toUpperCase());
   
     // Sort the filtered members alphabetically and return the concatenated first letters
-    return filteredMembers.map(member => member[0])
-                          .sort()
-                          .join('');
+    return filteredMembers.map(member => member[0]).sort().join('');
 }
 
 module.exports = {
