@@ -18,6 +18,7 @@ const HALF_LIFE_PERIOD = 5730;
  *
  */
 function dateSample(sampleActivity) {
+  if (!(sampleActivity instanceof Number)) return false;
   const k = Math.log(2) / HALF_LIFE_PERIOD;
   const age = Math.ceil(Math.log(MODERN_ACTIVITY / ratio) / k);
   return age;
