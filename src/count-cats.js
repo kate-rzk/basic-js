@@ -15,10 +15,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function countCats(backyard) {
-  // Flatten the 2D array into a 1D array
   const flatBackyard = backyard.flat();
-  
-  // Count the number of occurrences of the ears
   const numCats = flatBackyard.reduce((acc, curr) => {
     if (curr === "^^") {
       return acc + 1;
@@ -26,7 +23,6 @@ function countCats(backyard) {
       return acc;
     }
   }, 0);
-  
   return numCats;
 }
 

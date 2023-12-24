@@ -1,31 +1,33 @@
-const { NotImplementedError } = require('../extensions/index.js');
+const { NotImplementedError } = require("../extensions/index.js");
 
 /**
  * Create name of dream team based on the names of its members
- *  
- * @param {Array} members names of the members 
+ *
+ * @param {Array} members names of the members
  * @return {String | Boolean} name of the team or false
  * in case of incorrect members
  *
  * @example
- * 
+ *
  * createDreamTeam(['Matt', 'Ann', 'Dmitry', 'Max']) => 'ADMM'
  * createDreamTeam(['Olivia', 1111, 'Lily', 'Oscar', true, null]) => 'LOO'
  *
  */
 function createDreamTeam(members) {
-    // Check if members is an array
-    if (!Array.isArray(members)) {
-      return false;
-    }
-  
-    // Filter out non-string values and convert the remaining values to uppercase
-    const filteredMembers = members.filter(member => typeof member === 'string').map(member => member.trim().toUpperCase());
-  
-    // Sort the filtered members alphabetically and return the concatenated first letters
-    return filteredMembers.map(member => member[0]).sort().join('');
+  if (!Array.isArray(members)) {
+    return false;
+  }
+
+  const filteredMembers = members
+    .filter((member) => typeof member === "string")
+    .map((member) => member.trim().toUpperCase());
+
+  return filteredMembers
+    .map((member) => member[0])
+    .sort()
+    .join("");
 }
 
 module.exports = {
-  createDreamTeam
+  createDreamTeam,
 };
